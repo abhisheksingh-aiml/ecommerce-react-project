@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Hero from "./components/Hero";
 import "./App.css";
 import Categories from "./components/Categories";
-
+import Footer from "./components/Footer";
 function App() {
   return(
     <>
@@ -11,6 +11,7 @@ function App() {
     <Home />
     <Hero />
     <Categories />
+    <Footer />
     
     
     </>

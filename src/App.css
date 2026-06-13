@@ -198,3 +198,19 @@ body {
 .category-card:hover {
     transform: translateY(-10px);
 }
+
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  margin-top: 80px;
+}
+
+.footer h2 {
+  font-size: 30px;
+}
+
+.footer p {
+  color: gray;
+}
