@@ -1,12 +1,19 @@
 function Navbar() {
     return(
-        <nav>
-            <h1>Cartify</h1>
+        <nav className="navbar">
+            <h1 className="logo">Cartify</h1>
 
-            <ul>
+            <input
+               type="text"
+               placeholder="Search products..."
+               className="Search-bar"
+            />
+
+            <ul className="nav-links">
                 <li>Home</li>
                 <li>Product</li>
                 <li>Cart</li>
+                <li>About</li>
             </ul>
         </nav>
     );

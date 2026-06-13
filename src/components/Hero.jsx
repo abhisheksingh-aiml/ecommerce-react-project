@@ -1,7 +1,7 @@
 function Hero() {
     return(
         <div className="hero">
-            <div className="hero content">
+            <div className="hero-content">
                 <h1>Descover Amazing Collection</h1>
                 <p>
                     Find the latest fashion collection , at best prices.
