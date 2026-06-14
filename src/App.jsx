@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -9,18 +10,41 @@ import About from "./pages/About";
 import "./App.css";
 
 function App() {
-  return (
-    <>
-      <Navbar />
+const [cartItems, setCartItems] = useState([]);
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </>
-  );
+const addToCart = (product) => {
+setCartItems([...cartItems, product]);
+};
+
+return (
+<> <Navbar cartCount={cartItems.length} />
+
+
+  <Routes>
+    <Route
+      path="/"
+      element={<Home addToCart={addToCart} />}
+    />
+
+    <Route
+      path="/products"
+      element={<Products addToCart={addToCart} />}
+    />
+
+    <Route
+      path="/cart"
+      element={<Cart cartItems={cartItems} />}
+    />
+
+    <Route
+      path="/about"
+      element={<About />}
+    />
+  </Routes>
+</>
+
+
+);
 }
 
 export default App;
