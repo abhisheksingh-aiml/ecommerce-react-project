@@ -1,3 +1,6 @@
+import Hero from "../components/Hero";
+import Categories from "../components/Categories";
+import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 
 import nikeImage from "../assets/nike.jpg"
@@ -8,7 +11,11 @@ import fastrackImage from "../assets/fastrack.jpg"
 import rolexImage from "../assets/rolex.jpg"
 function Home() {
     return(
+
         <>
+
+        <Hero />
+
         <div>
             <h2>Welcome to My E-Commerce Web</h2>
             <p>Explore amazing products here</p>
@@ -55,7 +62,9 @@ function Home() {
              
             </div>
                 
+            <Categories />
 
+            <Footer /> 
   
 
         
