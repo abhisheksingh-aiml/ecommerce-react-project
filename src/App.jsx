@@ -11,24 +11,39 @@ import "./App.css";
 
 function App() {
 const [cartItems, setCartItems] = useState([]);
+const [searchTerm, setSearchTerm] = useState("");
 
 const addToCart = (product) => {
 setCartItems([...cartItems, product]);
 };
 
 return (
-<> <Navbar cartCount={cartItems.length} />
+<> <Navbar
+     cartCount={cartItems.length}
+     searchTerm={searchTerm}
+     setSearchTerm={setSearchTerm}
+   />
 
 
   <Routes>
     <Route
       path="/"
-      element={<Home addToCart={addToCart} />}
+      element={
+        <Home
+          addToCart={addToCart}
+          searchTerm={searchTerm}
+        />
+      }
     />
 
     <Route
       path="/products"
-      element={<Products addToCart={addToCart} />}
+      element={
+        <Products
+          addToCart={addToCart}
+          searchTerm={searchTerm}
+        />
+      }
     />
 
     <Route

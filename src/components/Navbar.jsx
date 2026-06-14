@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Navbar({ cartCount }) {
+function Navbar({ cartCount, searchTerm, setSearchTerm }) {
 return ( <nav className="navbar"> <h1 className="logo">Cartify</h1>
 
 
@@ -8,6 +8,8 @@ return ( <nav className="navbar"> <h1 className="logo">Cartify</h1>
     type="text"
     placeholder="Search products..."
     className="search-bar"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
   />
 
   <ul className="nav-links">
