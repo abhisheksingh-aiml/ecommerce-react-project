@@ -11,71 +11,47 @@ import fastrackImage from "../assets/fastrack.jpg";
 import rolexImage from "../assets/rolex.jpg";
 
 function Home({ addToCart, searchTerm }) {
-const products = [
-{
-image: nikeImage,
-name: "Nike Air",
-price: "$88",
-},
-{
-image: trendsImage,
-name: "Trends Comfort",
-price: "$76",
-},
-{
-image: airImage,
-name: "Air One",
-price: "$99",
-},
-{
-image: jordanImage,
-name: "Jordan",
-price: "$86",
-},
-{
-image: fastrackImage,
-name: "Fastrack Black",
-price: "$166",
-},
-{
-image: rolexImage,
-name: "Rolex Moon",
-price: "$899",
-},
-];
 
-const filteredProducts = products.filter((product) =>
-product.name.toLowerCase().includes(searchTerm.toLowerCase())
-);
+  const products = [
+    { image: nikeImage, name: "Nike Air", price: "$88" },
+    { image: trendsImage, name: "Trends Comfort", price: "$76" },
+    { image: airImage, name: "Air One", price: "$99" },
+    { image: jordanImage, name: "Jordan", price: "$86" },
+    { image: fastrackImage, name: "Fastrack Black", price: "$166" },
+    { image: rolexImage, name: "Rolex Moon", price: "$899" },
+  ];
 
-return (
-<> <Hero />
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
+  return (
+    <div className="page">
 
-  <div>
-    <h2>Welcome to My E-Commerce Web</h2>
-    <p>Explore amazing products here</p>
-  </div>
+      <Hero />
 
-  <div className="product-grid">
-    {filteredProducts.map((product, index) => (
-      <ProductCard
-        key={index}
-        image={product.image}
-        name={product.name}
-        price={product.price}
-        addToCart={() => addToCart(product)}
-      />
-    ))}
-  </div>
+      <div style={{ textAlign: "center", margin: "30px 0" }}>
+        <h2>Welcome to My E-Commerce Web</h2>
+        <p style={{ color: "#666" }}>Explore amazing premium products</p>
+      </div>
 
-  <Categories />
+      <div className="product-grid">
+        {filteredProducts.map((product, index) => (
+          <ProductCard
+            key={index}
+            image={product.image}
+            name={product.name}
+            price={product.price}
+            addToCart={() => addToCart(product)}
+          />
+        ))}
+      </div>
 
-  <Footer />
-</>
+      <Categories />
+      <Footer />
 
-
-);
+    </div>
+  );
 }
 
 export default Home;
