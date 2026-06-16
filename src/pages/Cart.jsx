@@ -1,4 +1,4 @@
-function Cart({ cartItems }) {
+function Cart({ cartItems, removeFromCart }) {
 return ( <div className="cart-page"> <h1>Your Cart</h1>
 
 
@@ -14,7 +14,9 @@ return ( <div className="cart-page"> <h1>Your Cart</h1>
           <p>{item.price}</p>
         </div>
 
-        <button>Remove</button>
+        <button onClick={() => removeFromCart(index)}>
+          Remove
+        </button>
       </div>
     ))
   )}

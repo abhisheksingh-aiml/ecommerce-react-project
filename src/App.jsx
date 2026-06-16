@@ -17,6 +17,12 @@ const addToCart = (product) => {
 setCartItems([...cartItems, product]);
 };
 
+const removeFromCart = (indexToRemove) => {
+setCartItems(
+cartItems.filter((item, index) => index !== indexToRemove)
+);
+};
+
 return (
 <> <Navbar
      cartCount={cartItems.length}
@@ -48,7 +54,12 @@ return (
 
     <Route
       path="/cart"
-      element={<Cart cartItems={cartItems} />}
+      element={
+        <Cart
+          cartItems={cartItems}
+          removeFromCart={removeFromCart}
+        />
+      }
     />
 
     <Route
