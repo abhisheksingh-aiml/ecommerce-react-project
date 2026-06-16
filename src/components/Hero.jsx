@@ -2,7 +2,7 @@ function Hero() {
     return(
         <div className="hero">
             <div className="hero-content">
-                <h1>Descover Amazing Collection</h1>
+                <h1>Discover Amazing Collection</h1>
                 <p>
                     Find the latest fashion collection , at best prices.
                 </p>

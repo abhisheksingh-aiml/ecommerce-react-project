@@ -1,17 +1,20 @@
 function Cart({ cartItems }) {
-return ( <div> <h1>Your Cart</h1>
+return ( <div className="cart-page"> <h1>Your Cart</h1>
 
 
   {cartItems.length === 0 ? (
     <p>Your cart is empty.</p>
   ) : (
     cartItems.map((item, index) => (
-      <div key={index}>
-        <img src={item.image} alt={item.name} width="100" />
+      <div className="cart-item" key={index}>
+        <img src={item.image} alt={item.name} />
 
-        <h3>{item.name}</h3>
+        <div className="cart-details">
+          <h3>{item.name}</h3>
+          <p>{item.price}</p>
+        </div>
 
-        <p>{item.price}</p>
+        <button>Remove</button>
       </div>
     ))
   )}
